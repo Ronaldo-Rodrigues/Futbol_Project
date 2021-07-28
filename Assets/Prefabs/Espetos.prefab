@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5422947316968603323}
   - component: {fileID: 5422947316968603322}
   - component: {fileID: 5422947316968603325}
+  - component: {fileID: 8057514717035247894}
   m_Layer: 0
   m_Name: Espetos
   m_TagString: Untagged
@@ -148,7 +149,7 @@ SliderJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureAngle: 1
-  m_Angle: 0
+  m_Angle: 126.41638
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 2
@@ -157,3 +158,15 @@ SliderJoint2D:
   m_TranslationLimits:
     m_LowerTranslation: -1
     m_UpperTranslation: 1
+--- !u!114 &8057514717035247894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422947316968603324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606bc263d671c4249b5148edaa341f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
