@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Fase_1.unity
+    guid: 8020032daf9ba454faf7ec03108c830c
+  - enabled: 1
+    path: Assets/Scenes/Fase_2.unity
+    guid: 3392a523527b4da4bbb32c3799285eb7
+  - enabled: 1
+    path: Assets/Scenes/Fase_3.unity
+    guid: f5f6342e4162b5c4a8dbd2387ca8be5c
+  - enabled: 1
+    path: Assets/Scenes/Fase_4.unity
+    guid: 32e6722fec091504c93ad7ac69ee0274
+  - enabled: 1
+    path: Assets/Scenes/Level_Game.unity
+    guid: 93d4ef5f0c452a148acf9b0e4e97cb2a
+  - enabled: 1
+    path: Assets/Scenes/Loja_Bolas.unity
+    guid: b1dc04d91f1a8a64b8d81c129ea276c6
+  - enabled: 1
+    path: Assets/Scenes/Menu_Inicial.unity
+    guid: d126fa519a7853d46b8d145bddb6b7a4
   m_configObjects: {}
