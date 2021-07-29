@@ -10,19 +10,22 @@ public class Rotação : MonoBehaviour
     [SerializeField]
     private Image setaImage;
 
+    public GameObject setaGo;
+
     public float zRotation;
     public bool liberaRot = false;
     public bool liberaTiro = false;
 
     void Start()
     {
-        PosicionaSeta();
+       
         PosicionaBola();
     }
 
     // Update is called once per frame
     void Update()
     {
+        PosicionaSeta();
         RotacaoSeta();
         InputdeRotacao();
         LimitaRotacao();
@@ -30,7 +33,7 @@ public class Rotação : MonoBehaviour
 
     void PosicionaSeta()
     {
-        setaImage.rectTransform.position = posStart.position;
+        setaImage.rectTransform.position = transform.position;
 
     }
     void PosicionaBola()
@@ -77,10 +80,13 @@ public class Rotação : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        setaGo.SetActive (true);
         liberaRot = true;
+
     }
     private void OnMouseUp()
     {
+        setaGo.SetActive(false);
         liberaRot = false;
         liberaTiro = true;
     }
