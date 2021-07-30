@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 8150970151088640031}
   - component: {fileID: 8150970151088640030}
   - component: {fileID: 8150970151088640029}
-  - component: {fileID: 7521220335017439985}
-  - component: {fileID: 6319950750112005023}
   - component: {fileID: 4989298636553295748}
+  - component: {fileID: 2396402801260092885}
   m_Layer: 0
   m_Name: bola
   m_TagString: Bola
@@ -123,37 +122,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.00000059604645}
   serializedVersion: 2
   m_Radius: 2.563905
---- !u!114 &7521220335017439985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8150970151088640025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41dcf665908b4ff4eaaaf34f5a231c5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seta2: {fileID: 0}
---- !u!114 &6319950750112005023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8150970151088640025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 112b06aa733695347bc7769195e5b8a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posStart: {fileID: 0}
-  setaImage: {fileID: 0}
-  setaGo: {fileID: 0}
-  zRotation: 0
-  liberaRot: 0
-  liberaTiro: 0
 --- !u!95 &4989298636553295748
 Animator:
   serializedVersion: 3
@@ -173,3 +141,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2396402801260092885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150970151088640025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7892d897067f9904caf43b1a4289fc3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
