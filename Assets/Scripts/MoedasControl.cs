@@ -10,6 +10,7 @@ public class MoedasControl : MonoBehaviour
         if (other.gameObject.CompareTag("Bola"))
         {
             ScoreManager.instance.ColetaMoedas(10);
+            AudioManager.instance.SonsFXToca(1); 
             Destroy(this.gameObject);
         }
     }

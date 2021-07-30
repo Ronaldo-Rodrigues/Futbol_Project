@@ -4,16 +4,44 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
+    //musica BG
     public AudioClip[] clips;
     public AudioSource musicaBG;
-    void Start()
+    //sons FX
+    public AudioClip[] clipsFX;
+    public AudioSource sonsFX;
+    private void Awake()
     {
-        
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
-    // Update is called once per frame
+    AudioClip GetRandom()
+    {
+        return clips[Random.Range(0, clips.Length)];
+    }
+  
     void Update()
     {
-        
+        if (!musicaBG.isPlaying)
+        {
+            musicaBG.clip = GetRandom();
+            musicaBG.Play();
+        }
+    }
+
+    public void SonsFXToca(int index)
+    {
+        sonsFX.clip = clipsFX[index];
+        sonsFX.Play();
     }
 }

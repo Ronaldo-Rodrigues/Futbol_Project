@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8150970151088640029}
   - component: {fileID: 7521220335017439985}
   - component: {fileID: 6319950750112005023}
+  - component: {fileID: 4989298636553295748}
   m_Layer: 0
   m_Name: bola
   m_TagString: Bola
@@ -93,7 +94,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8150970151088640025}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -149,6 +150,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posStart: {fileID: 0}
   setaImage: {fileID: 0}
+  setaGo: {fileID: 0}
   zRotation: 0
   liberaRot: 0
   liberaTiro: 0
+--- !u!95 &4989298636553295748
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150970151088640025}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 281c8015ec1bfc9489d09f07638c9ca0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

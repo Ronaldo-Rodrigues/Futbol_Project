@@ -86,6 +86,7 @@ public class Rotação : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        AudioManager.instance.SonsFXToca(0);
         setaGo.SetActive(false);
         liberaRot = false;
         liberaTiro = true;
