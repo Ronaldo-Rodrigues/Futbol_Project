@@ -101,18 +101,26 @@ public class BolaControl : MonoBehaviour
     }
     private void OnMouseDown()
     {
-       // setaGo.GetComponent<Image>();
-        setaGo.SetActive(true);
-        liberaRot = true;
+       if(GameManager.instance.tiro == 0)
+        {
+            setaGo.SetActive(true);
+            liberaRot = true;
+        }
 
     }
     private void OnMouseUp()
     {
         AudioManager.instance.SonsFXToca(0);
-        //setaGo.GetComponent<Image>();
         setaGo.SetActive(false);
-        liberaRot = false;
-        liberaTiro = true;
+        
+        if (GameManager.instance.tiro == 0 && force > 0)
+        {
+            liberaRot = false;
+            liberaTiro = true;
+            AudioManager.instance.SonsFXToca(0);
+            GameManager.instance.tiro = 1;
+        }
+       
     }
 
     //força
