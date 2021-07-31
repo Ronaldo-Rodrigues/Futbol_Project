@@ -146,4 +146,8 @@ public class BolaControl : MonoBehaviour
             }
         }
     }
+    void BolaDinamica()
+    {
+        this.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+    }
 }
