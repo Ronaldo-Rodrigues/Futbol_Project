@@ -7,7 +7,10 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     public Text pontosUI, bolasUI;
-    public GameObject losePanel,winPanel;
+    public GameObject losePanel,winPanel,pausePanel;
+    [SerializeField]
+    private Button pauseBtn;
+    
     private void Awake()
     {
         if(instance == null)
@@ -29,6 +32,9 @@ public class UIManager : MonoBehaviour
         bolasUI = GameObject.Find("BolasUI").GetComponent<Text>();
         losePanel = GameObject.Find("Lose_painel");
         winPanel = GameObject.Find("Win_painel");
+        pausePanel = GameObject.Find("Pause_Panel");
+        pauseBtn = GameObject.Find("PauseBtn").GetComponent<Button>();
+        pauseBtn.onClick.AddListener(PauseGame);
     }
     public void UpdateUI()
     {
@@ -44,11 +50,18 @@ public class UIManager : MonoBehaviour
     {
         winPanel.gameObject.SetActive(true);
     }
+    void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        pausePanel.GetComponent<Animator>().Play("PauseUi_Move");
+        Time.timeScale = 0;
+    }
     IEnumerator TempoDesligaUI()
     {
         yield return new WaitForSeconds(0.001f);
         losePanel.gameObject.SetActive(false);
         winPanel.gameObject.SetActive(false);
+        pausePanel.gameObject.SetActive(false);
     }
     void LigaDesligLoseUI()
     {
