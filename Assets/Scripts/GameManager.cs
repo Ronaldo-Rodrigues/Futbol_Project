@@ -12,10 +12,10 @@ public class GameManager : MonoBehaviour
     private GameObject bola;
     private Transform pos;
     
-    public int bolasNum =  5, bolasEmCena = 0, tiro = 0;
-       
-    
-    public bool bolaMorreu = false, win;
+    public int bolasNum = 3, bolasEmCena = 0, tiro = 0;
+    public int ondeEstou;
+
+    public bool win;
    
    
 
@@ -35,11 +35,12 @@ public class GameManager : MonoBehaviour
     void Carrega(Scene cena, LoadSceneMode modo)
     {
         pos = GameObject.Find("InicialPos").GetComponent<Transform>();
+        ondeEstou = SceneManager.GetActiveScene().buildIndex;
     }
     void Start()
     {
         ScoreManager.instance.GameStartScoreM();
-        bolasNum = 5;
+        
     }
 
     void Update()

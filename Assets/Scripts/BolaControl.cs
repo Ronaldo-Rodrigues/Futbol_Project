@@ -15,14 +15,14 @@ public class BolaControl : MonoBehaviour
     private Rigidbody2D bola;
     private float force = 0;
     public GameObject seta2;
-
+    //paredes de matar o personagem
     public Transform paredeLD, paredeLE;
 
     private void Awake()
     {
-        setaGo = GameObject.Find("Seta1");
-        seta2 = setaGo.transform.GetChild(0).gameObject; //para pegar a img no child;
-        setaGo.GetComponent<Image>().enabled = false;
+        setaGo = GameObject.Find("Seta1"); //seta borda que sera preenchida
+        seta2 = setaGo.transform.GetChild(0).gameObject; //para pegar a img de Fill da seta1 no child;
+        setaGo.GetComponent<Image>().enabled = false; //para desligar as setas
         seta2.GetComponent<Image>().enabled = false;
         paredeLD = GameObject.Find("ParedeLD").GetComponent<Transform>();
         paredeLE = GameObject.Find("ParedeLE").GetComponent<Transform>();
@@ -52,13 +52,14 @@ public class BolaControl : MonoBehaviour
     }
 
     void PosicionaSeta()
-    {
+    {   
+        //fixa a seta na bola
         setaGo.GetComponent<Image>().rectTransform.position = transform.position;
-
     }
 
     void RotacaoSeta()
     {
+        //faz a rotação da seta
         setaGo.GetComponent<Image>().rectTransform.eulerAngles = new Vector3(0, 0, zRotation);
     }
     void InputdeRotacao()
@@ -86,6 +87,7 @@ public class BolaControl : MonoBehaviour
 
     void LimitaRotacao()
     {
+        //barra a rotação 180 da seta
         if (zRotation >= 90)
         {
             zRotation = 90;
@@ -118,6 +120,7 @@ public class BolaControl : MonoBehaviour
             AudioManager.instance.SonsFXToca(0);
             GameManager.instance.tiro = 1;
             seta2.GetComponent<Image>().fillAmount = 0;
+            
         }
        
     }
@@ -155,24 +158,22 @@ public class BolaControl : MonoBehaviour
     }
     void BolaDinamica()
     {
+        //faz com que o rb da bola passe de kinematic para dinamic, assim da termp de ver a  animação
         this.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
     }
 
     void Paredes()
     {
+        
         if(this.transform.position.x > paredeLD.position.x)
         {
-            Debug.Log("Maior");
             Destroy(this.gameObject);
-            GameManager.instance.bolasEmCena -= 1;
-            
+            GameManager.instance.bolasEmCena -= 1;   
         }
         if (this.transform.position.x < paredeLE.position.x)
         {
-           
             Destroy(this.gameObject);
             GameManager.instance.bolasEmCena -= 1;
-            
         }
     }
 

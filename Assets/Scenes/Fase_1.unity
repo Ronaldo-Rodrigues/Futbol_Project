@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 354420968}
   - component: {fileID: 354420967}
   m_Layer: 5
-  m_Name: Button
+  m_Name: JogaNovamenteBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -930,7 +930,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 73c85a422618a5f4e8dcbe794e20f23d, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -994,7 +994,7 @@ GameObject:
   - component: {fileID: 587940557}
   - component: {fileID: 587940556}
   m_Layer: 5
-  m_Name: Pause
+  m_Name: PauseBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1289,7 +1289,7 @@ GameObject:
   - component: {fileID: 805444249}
   - component: {fileID: 805444248}
   m_Layer: 5
-  m_Name: Button
+  m_Name: PauseReturn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1408,7 +1408,7 @@ GameObject:
   - component: {fileID: 847650350}
   - component: {fileID: 847650349}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MenuBtn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2228,7 +2228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1109945959
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2501,6 +2501,12 @@ MonoBehaviour:
   pontosUI: {fileID: 0}
   bolasUI: {fileID: 0}
   losePanel: {fileID: 0}
+  winPanel: {fileID: 0}
+  pausePanel: {fileID: 0}
+  pauseBtn: {fileID: 0}
+  pauseBtn_Return: {fileID: 0}
+  jogaNovamenteBtn: {fileID: 0}
+  MenuBtn: {fileID: 0}
 --- !u!4 &1286536931
 Transform:
   m_ObjectHideFlags: 0
@@ -3843,7 +3849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2002463602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3955,6 +3961,8 @@ MonoBehaviour:
   bolasNum: 2
   bolasEmCena: 0
   tiro: 0
+  bolaMorreu: 0
+  win: 0
 --- !u!4 &2069584319
 Transform:
   m_ObjectHideFlags: 0
