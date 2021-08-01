@@ -10,13 +10,14 @@ public class GameManager : MonoBehaviour
     
     [SerializeField]
     private GameObject bola;
-    public int bolasNum =  5;
-    private bool bolaMorreu = false;
-    
-    public int bolasEmCena = 0;
     private Transform pos;
-
-    public int tiro = 0;
+    
+    public int bolasNum =  5, bolasEmCena = 0, tiro = 0;
+       
+    
+    public bool bolaMorreu = false, win;
+   
+   
 
     private void Awake()
     {
@@ -46,6 +47,10 @@ public class GameManager : MonoBehaviour
         ScoreManager.instance.UpdateScore();
         UIManager.instance.UpdateUI();
         NasceBolas();
+        if(win == true)
+        {
+            UIManager.instance.WinGameUI();
+        }
     }
 
     void NasceBolas()

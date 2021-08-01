@@ -180,10 +180,12 @@ public class BolaControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Serra"))
         {
-            
             Destroy(this.gameObject);
             GameManager.instance.bolasEmCena -= 1;
-            
+        }
+        if (other.gameObject.CompareTag("Win"))
+        {
+            GameManager.instance.win = true;
         }
     }
 }

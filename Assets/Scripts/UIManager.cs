@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     public Text pontosUI, bolasUI;
-    public GameObject losePanel;
+    public GameObject losePanel,winPanel;
     private void Awake()
     {
         if(instance == null)
@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
         pontosUI = GameObject.Find("pontosUI").GetComponent<Text> ();
         bolasUI = GameObject.Find("BolasUI").GetComponent<Text>();
         losePanel = GameObject.Find("Lose_painel");
+        winPanel = GameObject.Find("Win_painel");
     }
     public void UpdateUI()
     {
@@ -39,10 +40,15 @@ public class UIManager : MonoBehaviour
     {
         losePanel.gameObject.SetActive(true);
     }
+    public void WinGameUI()
+    {
+        winPanel.gameObject.SetActive(true);
+    }
     IEnumerator TempoDesligaUI()
     {
         yield return new WaitForSeconds(0.001f);
         losePanel.gameObject.SetActive(false);
+        winPanel.gameObject.SetActive(false);
     }
     void LigaDesligLoseUI()
     {
