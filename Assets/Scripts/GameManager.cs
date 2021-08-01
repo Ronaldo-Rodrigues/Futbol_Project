@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     
     [SerializeField]
     private GameObject bola;
-    private int bolasNum =2;
+    public int bolasNum =  5;
     private bool bolaMorreu = false;
-    private int bolasEmCena = 0;
+    
+    public int bolasEmCena = 0;
     private Transform pos;
 
     public int tiro = 0;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ScoreManager.instance.GameStartScoreM();
+        bolasNum = 5;
     }
 
     void Update()
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(bola, new Vector2(pos.position.x, pos.position.y), Quaternion.identity);
             bolasEmCena += 1;
+            bolasNum -= 1;
             tiro = 0;
         }
     }

@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class BolaControl : MonoBehaviour
 {   
-    //pos da seta
-    [SerializeField]
-    private Transform posStart;
     //seta
     public GameObject setaGo;
     //rotação
@@ -19,21 +16,20 @@ public class BolaControl : MonoBehaviour
     private float force = 0;
     public GameObject seta2;
 
+    public Transform paredeLD, paredeLE;
+
     private void Awake()
     {
         setaGo = GameObject.Find("Seta1");
-        if(setaGo == null)
-        {
-            Debug.Log("naodeu");
-        }
-        seta2 = setaGo.transform.GetChild(0).gameObject;
-        setaGo.SetActive(false);
+        seta2 = setaGo.transform.GetChild(0).gameObject; //para pegar a img no child;
+        setaGo.GetComponent<Image>().enabled = false;
+        seta2.GetComponent<Image>().enabled = false;
+        paredeLD = GameObject.Find("ParedeLD").GetComponent<Transform>();
+        paredeLE = GameObject.Find("ParedeLE").GetComponent<Transform>();
     }
     void Start()
     {
-        posStart = GameObject.Find("InicialPos").GetComponent<Transform>();
-        PosicionaBola();
-
+    
         //força
         bola = GetComponent<Rigidbody2D>();
         
@@ -50,6 +46,9 @@ public class BolaControl : MonoBehaviour
         //força
         AplicaForca();
         ControlaForca();
+
+        //morrer ao passar da parede
+        Paredes();
     }
 
     void PosicionaSeta()
@@ -57,10 +56,7 @@ public class BolaControl : MonoBehaviour
         setaGo.GetComponent<Image>().rectTransform.position = transform.position;
 
     }
-    void PosicionaBola()
-    {
-        this.gameObject.transform.position = posStart.position;
-    }
+
     void RotacaoSeta()
     {
         setaGo.GetComponent<Image>().rectTransform.eulerAngles = new Vector3(0, 0, zRotation);
@@ -103,7 +99,8 @@ public class BolaControl : MonoBehaviour
     {
        if(GameManager.instance.tiro == 0)
         {
-            setaGo.SetActive(true);
+            setaGo.GetComponent<Image>().enabled = true;
+            seta2.GetComponent<Image>().enabled = true;
             liberaRot = true;
         }
 
@@ -111,14 +108,16 @@ public class BolaControl : MonoBehaviour
     private void OnMouseUp()
     {
         AudioManager.instance.SonsFXToca(0);
-        setaGo.SetActive(false);
-        
+        setaGo.GetComponent<Image>().enabled = false;
+        seta2.GetComponent<Image>().enabled = false;
+
         if (GameManager.instance.tiro == 0 && force > 0)
         {
             liberaRot = false;
             liberaTiro = true;
             AudioManager.instance.SonsFXToca(0);
             GameManager.instance.tiro = 1;
+            seta2.GetComponent<Image>().fillAmount = 0;
         }
        
     }
@@ -157,5 +156,34 @@ public class BolaControl : MonoBehaviour
     void BolaDinamica()
     {
         this.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+    }
+
+    void Paredes()
+    {
+        if(this.transform.position.x > paredeLD.position.x)
+        {
+            Debug.Log("Maior");
+            Destroy(this.gameObject);
+            GameManager.instance.bolasEmCena -= 1;
+            
+        }
+        if (this.transform.position.x < paredeLE.position.x)
+        {
+           
+            Destroy(this.gameObject);
+            GameManager.instance.bolasEmCena -= 1;
+            
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Serra"))
+        {
+            
+            Destroy(this.gameObject);
+            GameManager.instance.bolasEmCena -= 1;
+            
+        }
     }
 }
