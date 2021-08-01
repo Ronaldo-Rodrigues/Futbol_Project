@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
 
     void NasceBolas()
     {
+        if(bolasNum <= 0)
+        {
+            GameOver();
+        }
         if(bolasNum > 0 && bolasEmCena == 0)
         {
             Instantiate(bola, new Vector2(pos.position.x, pos.position.y), Quaternion.identity);
@@ -57,5 +61,10 @@ public class GameManager : MonoBehaviour
             bolasNum -= 1;
             tiro = 0;
         }
+    }
+
+    void GameOver()
+    {
+        UIManager.instance.GameOverUI();
     }
 }
