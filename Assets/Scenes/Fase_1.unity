@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 354420968}
   - component: {fileID: 354420967}
   m_Layer: 5
-  m_Name: JogaNovamenteBtn
+  m_Name: JogaNovamenteBtn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -860,7 +860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &355458165
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3849,7 +3849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2002463602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3961,7 +3961,7 @@ MonoBehaviour:
   bolasNum: 2
   bolasEmCena: 0
   tiro: 0
-  bolaMorreu: 0
+  ondeEstou: 0
   win: 0
 --- !u!4 &2069584319
 Transform:
