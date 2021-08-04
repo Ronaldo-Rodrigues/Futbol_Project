@@ -26,8 +26,11 @@ public class UIManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-       
+        LigaDesligLoseUI();
         SceneManager.sceneLoaded += Carrega;
+    }
+    public void StartUI()
+    {
         LigaDesligLoseUI();
     }
     
@@ -47,11 +50,11 @@ public class UIManager : MonoBehaviour
         pauseBtn_Return.onClick.AddListener(PauseGameReturn);
         
         //Joga Novamente UI
-        jogaNovamenteBtn = GameObject.Find("JogaNovamenteBtn1").GetComponent<Button>();
+        jogaNovamenteBtn = GameObject.Find("LoseJogaNovamenteBtn").GetComponent<Button>();
         jogaNovamenteBtn.onClick.AddListener(JogarNovamente);
         
         //Menu fases UI
-        MenuBtn = GameObject.Find("MenuBtn1").GetComponent<Button>();
+        MenuBtn = GameObject.Find("LoseMenuBtn").GetComponent<Button>();
         //MenuBtn = .onClick.AddListener();
     }
     public void UpdateUI()

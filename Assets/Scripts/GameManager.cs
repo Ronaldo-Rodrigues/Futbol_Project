@@ -10,11 +10,12 @@ public class GameManager : MonoBehaviour
     
     [SerializeField]
     private GameObject bola;
-    private Transform pos;
+    public Transform pos;
     
     public int bolasNum = 3, bolasEmCena = 0, tiro = 0;
-    public int ondeEstou;
+    //public int ondeEstou;
 
+    public bool JogoComecou;
     public bool win;
    
    
@@ -35,7 +36,8 @@ public class GameManager : MonoBehaviour
     void Carrega(Scene cena, LoadSceneMode modo)
     {
         pos = GameObject.Find("InicialPos").GetComponent<Transform>();
-        ondeEstou = SceneManager.GetActiveScene().buildIndex;
+        GameStart();
+        //ondeEstou = SceneManager.GetActiveScene().buildIndex;
     }
     void Start()
     {
@@ -60,7 +62,7 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
-        if(bolasNum > 0 && bolasEmCena == 0)
+        if(bolasNum >= 0 && bolasEmCena == 0)
         {
             Instantiate(bola, new Vector2(pos.position.x, pos.position.y), Quaternion.identity);
             bolasEmCena += 1;
@@ -68,9 +70,21 @@ public class GameManager : MonoBehaviour
             tiro = 0;
         }
     }
-
+    void GameStart()
+    {
+        JogoComecou = true;
+        bolasNum = 2;
+        bolasEmCena = 0;
+        UIManager.instance.StartUI();
+    }
     void GameOver()
     {
         UIManager.instance.GameOverUI();
+        JogoComecou = false;
+    }
+    void WinGame()
+    {
+        UIManager.instance.WinGameUI();
+        JogoComecou = false;
     }
 }
