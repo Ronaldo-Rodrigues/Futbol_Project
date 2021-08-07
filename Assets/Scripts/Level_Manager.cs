@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Level_Manager : MonoBehaviour
 {
 
@@ -36,11 +36,16 @@ public class Level_Manager : MonoBehaviour
             }
             btnNew.desbloqueadoBtn = level.desbloquiado;
             btnNew.GetComponent<Button>().interactable = level.autorizado;
+            //para entrar na scena quando clicar no botao de fases
+            btnNew.GetComponent<Button>().onClick.AddListener(() => ClickLevel("Fase_" + btnNew.txtBtn.text));
 
             btnNovo.transform.SetParent(localBtn, false);
         }
     }
-
+    void ClickLevel(string level)
+    {
+        SceneManager.LoadScene(level);  
+    }
 
     void Start()
     {

@@ -35,9 +35,13 @@ public class GameManager : MonoBehaviour
     }
     void Carrega(Scene cena, LoadSceneMode modo)
     {
-        pos = GameObject.Find("InicialPos").GetComponent<Transform>();
-        GameStart();
-        //ondeEstou = SceneManager.GetActiveScene().buildIndex;
+        if(OndeEstou.instance.fase != 4)
+        {
+            pos = GameObject.Find("InicialPos").GetComponent<Transform>();
+            GameStart();
+            //ondeEstou = SceneManager.GetActiveScene().buildIndex;
+        }
+
     }
     void Start()
     {
@@ -72,9 +76,11 @@ public class GameManager : MonoBehaviour
     }
     void GameStart()
     {
+      
         JogoComecou = true;
         bolasNum = 2;
         bolasEmCena = 0;
+        win = false;
         UIManager.instance.StartUI();
     }
     void GameOver()

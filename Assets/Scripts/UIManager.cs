@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
    [SerializeField]
     private Button pauseBtn,pauseBtn_Return;
    [SerializeField]
-    private Button jogaNovamenteBtn, MenuBtn;
+    private Button jogaNovamenteBtn, MenuBtn; //lose
 
     private void Awake()
     {
@@ -35,27 +35,30 @@ public class UIManager : MonoBehaviour
     }
     
     void Carrega (Scene cena, LoadSceneMode modo)
-    {   
-        //paineis de UI
-        pontosUI = GameObject.Find("pontosUI").GetComponent<Text> ();
-        bolasUI = GameObject.Find("BolasUI").GetComponent<Text>();
-        losePanel = GameObject.Find("Lose_painel");
-        winPanel = GameObject.Find("Win_painel");
-        pausePanel = GameObject.Find("Pause_Panel");
-       
-        //pause UI
-        pauseBtn = GameObject.Find("PauseBtn").GetComponent<Button>();
-        pauseBtn.onClick.AddListener(PauseGame);
-        pauseBtn_Return = GameObject.Find("PauseReturn").GetComponent<Button>();
-        pauseBtn_Return.onClick.AddListener(PauseGameReturn);
-        
-        //Joga Novamente UI
-        jogaNovamenteBtn = GameObject.Find("LoseJogaNovamenteBtn").GetComponent<Button>();
-        jogaNovamenteBtn.onClick.AddListener(JogarNovamente);
-        
-        //Menu fases UI
-        MenuBtn = GameObject.Find("LoseMenuBtn").GetComponent<Button>();
-        //MenuBtn = .onClick.AddListener();
+    {   if(OndeEstou.instance.fase != 4)
+        {
+            //paineis de UI
+            pontosUI = GameObject.Find("pontosUI").GetComponent<Text>();
+            bolasUI = GameObject.Find("BolasUI").GetComponent<Text>();
+            losePanel = GameObject.Find("Lose_painel");
+            winPanel = GameObject.Find("Win_painel");
+            pausePanel = GameObject.Find("Pause_Panel");
+
+            //pause UI
+            pauseBtn = GameObject.Find("PauseBtn").GetComponent<Button>();
+            pauseBtn.onClick.AddListener(PauseGame);
+            pauseBtn_Return = GameObject.Find("PauseReturn").GetComponent<Button>();
+            pauseBtn_Return.onClick.AddListener(PauseGameReturn);
+
+            //Joga Novamente UI
+            jogaNovamenteBtn = GameObject.Find("LoseJogaNovamenteBtn").GetComponent<Button>();
+            jogaNovamenteBtn.onClick.AddListener(JogarNovamente);
+
+            //Menu fases UI
+            MenuBtn = GameObject.Find("LoseMenuBtn").GetComponent<Button>();
+            MenuBtn.onClick.AddListener(Levels);
+        }
+
     }
     public void UpdateUI()
     {
@@ -90,7 +93,25 @@ public class UIManager : MonoBehaviour
     //Função de Jogar novamente a mesma cena ao perder
     void JogarNovamente()
     {
-        SceneManager.LoadScene(GameManager.instance.ondeEstou);
+        if (!GameManager.instance.win)
+        {
+            SceneManager.LoadScene(OndeEstou.instance.fase);
+        }
+        else
+        {
+            SceneManager.LoadScene(OndeEstou.instance.fase);
+        }
+    }
+    void   Levels()
+    {
+        if(GameManager.instance.win == false)
+        {
+            SceneManager.LoadScene(4);
+        }
+        else
+        {
+            SceneManager.LoadScene(4);
+        }
     }
 
     //Desliga as UIs assim que o jogo inicia
