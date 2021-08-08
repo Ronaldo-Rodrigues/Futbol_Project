@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private GameObject bola;
     public Transform pos;
     
-    public int bolasNum = 3, bolasEmCena = 0, tiro = 0;
+    public int bolasNum, bolasEmCena = 0, tiro = 0;
     //public int ondeEstou;
 
     public bool JogoComecou;
@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         SceneManager.sceneLoaded += Carrega;
+        pos = GameObject.Find("InicialPos").GetComponent<Transform>();
+      
+       
     }
     void Carrega(Scene cena, LoadSceneMode modo)
     {
@@ -45,6 +48,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        GameStart();
         ScoreManager.instance.GameStartScoreM();
         
     }
@@ -78,7 +82,7 @@ public class GameManager : MonoBehaviour
     {
       
         JogoComecou = true;
-        bolasNum = 2;
+        bolasNum = 5;
         bolasEmCena = 0;
         win = false;
         UIManager.instance.StartUI();

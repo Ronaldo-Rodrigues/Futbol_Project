@@ -17,6 +17,9 @@ public class BolaControl : MonoBehaviour
     public GameObject seta2;
     //paredes de matar o personagem
     public Transform paredeLD, paredeLE;
+    //Morte bola FX obj
+    [SerializeField]
+    private GameObject morteBolaFX;
 
     private void Awake()
     {
@@ -120,6 +123,7 @@ public class BolaControl : MonoBehaviour
             AudioManager.instance.SonsFXToca(0);
             GameManager.instance.tiro = 1;
             seta2.GetComponent<Image>().fillAmount = 0;
+            StartCoroutine(MorreAposTempo());
             
         }
        
@@ -181,12 +185,35 @@ public class BolaControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Serra"))
         {
+            Instantiate(morteBolaFX, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             GameManager.instance.bolasEmCena -= 1;
         }
         if (other.gameObject.CompareTag("Win"))
         {
             GameManager.instance.win = true;
+            int temp = OndeEstou.instance.fase+1;
+            temp++;
+            PlayerPrefs.SetInt("Level" + temp, 1);
         }
+    }
+
+    //Função temporaria de destruir a bola apos um tempo de ser lançada
+    IEnumerator MorreAposTempo()
+    {
+        yield return new WaitForSeconds(4);
+        if (GameManager.instance.win == false)
+        {
+            Instantiate(morteBolaFX, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            GameManager.instance.bolasEmCena -= 1;
+        }
+        else { yield return 1; }
+
+    }
+    void ChecaSeGanhou()
+    {
+
+      
     }
 }

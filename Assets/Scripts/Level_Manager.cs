@@ -19,6 +19,11 @@ public class Level_Manager : MonoBehaviour
     public Transform localBtn;
     public List<Level> levelList;
 
+    private void Awake()
+    {
+        Destroy(GameObject.Find("UIManager(Clone)"));
+        Destroy(GameObject.Find("GameManager(Clone)"));
+    }
     void ListaAdd()
     {
         foreach (Level level in levelList)

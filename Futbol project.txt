@@ -1,0 +1,40 @@
+﻿Mecânicas possíveis:
+
+//Jogar bola no ângulo e força correta para acertar o gol.
+//O gol libera animação para acertar o monstro
+
+
+Cenário:
+
+-Estrelas espalhadas em locais estratégicos par se jogar a bola e ganhar mais pontos
+-canhoes em pontos estratégicos que jogam a bola para outros lados e assim pegar estrelas escondidas.
+-canhoes invisíveis que jogam pra outros lugares secretos.
+-canhoes que pode se controlar de alguma forma para acertar objetivos.
+-bombas que explodem o jogador.
+-aves que voam durante a cena e atrapalham o jogador.
+-chuva pedacos de prédio e escombros que caem e atrapalham o jogador.
+
+
+
+
+Sistema de Estrelas
+
+-estrelas de várias cores que representam o nível de raridade e potência (verde, azul, amarelo, roxo)
+-quando a bola passa nas estrelas ela ganha mais energia para atacar o monstro
+-estrelas dão pontos
+-estrelas ganhadas em jogo são guardadas e podem ser gastas na loja atravez de conversao em cristais
+-estrelas se convertem em cristais que são usados na loja. Cada estrela converte em mais ou menos cristais de acordo com sua cor e potência.
+
+
+Montros
+
+-monstros são colecionáveis
+-a cada monstro novo o jogador recebe uma carta que libera o monstro. Quanto mais cartas de monstro o personagem juntar mais cristais ele vai conseguir.
+-cada carta de monstro garante ao jogador uma quantidade de estrelas
+
+
+Loja
+
+-pode se comprar bolas com astetica diferente e que possuem mais poder
+-bolas melhores custam mais cristais
+-cristais podem ser conseguidos através de compra direta, ou de recursos do jogo como estrelas, e vídeo ads.
