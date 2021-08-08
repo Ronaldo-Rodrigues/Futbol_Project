@@ -2,6 +2,7 @@
 
 //Jogar bola no ângulo e força correta para acertar o gol.
 //O gol libera animação para acertar o monstro
+//destroy objetos quando bate neles
 
 
 Cenário:

@@ -66,16 +66,18 @@ public class GameManager : MonoBehaviour
 
     void NasceBolas()
     {
-        if(bolasNum <= 0)
+       
+        if (bolasNum <= 0)
         {
             GameOver();
         }
-        if(bolasNum >= 0 && bolasEmCena == 0)
+        if(bolasNum > 0 && bolasEmCena <= 0)
         {
             Instantiate(bola, new Vector2(pos.position.x, pos.position.y), Quaternion.identity);
             bolasEmCena += 1;
             bolasNum -= 1;
             tiro = 0;
+            
         }
     }
     void GameStart()

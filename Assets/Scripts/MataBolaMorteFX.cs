@@ -11,7 +11,7 @@ public class MataBolaMorteFX : MonoBehaviour
     }
 IEnumerator MataFX()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         Destroy(this.gameObject);
     }
 }

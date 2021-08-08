@@ -922,8 +922,8 @@ MonoBehaviour:
     autorizado: 1
     desbloquiado: 1
   - levelText: 2
-    autorizado: 1
-    desbloquiado: 1
+    autorizado: 0
+    desbloquiado: 0
   - levelText: 3
     autorizado: 0
     desbloquiado: 0

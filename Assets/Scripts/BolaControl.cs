@@ -176,6 +176,7 @@ public class BolaControl : MonoBehaviour
         }
         if (this.transform.position.x < paredeLE.position.x)
         {
+            Debug.Log("mais1");
             Destroy(this.gameObject);
             GameManager.instance.bolasEmCena -= 1;
         }
@@ -206,6 +207,7 @@ public class BolaControl : MonoBehaviour
         {
             Instantiate(morteBolaFX, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+           
             GameManager.instance.bolasEmCena -= 1;
         }
         else { yield return 1; }
