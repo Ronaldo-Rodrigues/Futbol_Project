@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LojadeBolas : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class LojadeBolas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        FillList();
     }
 
     // Update is called once per frame
@@ -40,6 +41,19 @@ public class LojadeBolas : MonoBehaviour
             GameObject itensBola = Instantiate(baseBolaItem) as GameObject;
             itensBola.transform.SetParent(conteudo, false);
             BolasVitrine item = itensBola.GetComponent<BolasVitrine>();
+
+            item.bolaID = b.bolasID;
+            item.bolaPreco.text = b.bolaPreço.ToString();
+
+            if(b.comprou == true)
+            {
+                item.bolaSprite.sprite = Resources.Load<Sprite>("Sprites/" + b.nomeSprite);
+            }
+            else
+            {
+                item.bolaSprite.sprite = Resources.Load<Sprite>("Sprites/" + b.nomeSprite + "_cinza"); 
+            }
+
         }
     }
 }
