@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 928088568841228823}
   - component: {fileID: 2502276749772363883}
   - component: {fileID: 4242259040420860984}
+  - component: {fileID: -4596728827400991044}
   m_Layer: 5
   m_Name: Vitrine_bola
   m_TagString: Untagged
@@ -196,6 +197,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-4596728827400991044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885040454022307092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a3f5a2110cfe344be87b06a0578c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bolaPreco: {fileID: 3178945274669496734}
+  bolaSprite: {fileID: 6446752364427505672}
+  bolaID: 0
+  btnCompra: {fileID: 2099365605608653564}
 --- !u!1 &2099365605608653564
 GameObject:
   m_ObjectHideFlags: 0
