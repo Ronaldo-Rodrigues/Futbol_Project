@@ -42,7 +42,7 @@ public class LojadeBolas : MonoBehaviour
             itensBola.transform.SetParent(conteudo, false);
             BolasVitrine item = itensBola.GetComponent<BolasVitrine>();
 
-            item.bolaID = b.bolasID;
+     
             item.bolaPreco.text = b.bolaPreço.ToString();
 
             if(b.comprou == true)
