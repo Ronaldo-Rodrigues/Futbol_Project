@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
        
         if (bolasNum <= 0)
         {
+            tiro = 1;
             GameOver();
         }
         if(bolasNum > 0 && bolasEmCena <= 0)

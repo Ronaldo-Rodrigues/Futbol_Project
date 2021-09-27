@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class BolasLoja : MonoBehaviour
+public class BolasLoja 
 {
     public int bolasID;
     public string nomeSprite;
