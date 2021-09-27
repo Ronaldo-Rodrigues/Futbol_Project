@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bolasIDe: 0
-  btnText: {fileID: 0}
+  btnText: {fileID: 398355266619418012}
 --- !u!114 &8041844985848977345
 MonoBehaviour:
   m_ObjectHideFlags: 0

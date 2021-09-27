@@ -9,4 +9,7 @@ public class BolasVitrine : MonoBehaviour
     public Image bolaSprite;
     public int bolaID;
     public GameObject btnCompra;
+
+
+
 }

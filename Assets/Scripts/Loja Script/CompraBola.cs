@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+[System.Serializable]
 public class CompraBola : MonoBehaviour
 {
     public int bolasIDe;
@@ -14,8 +15,9 @@ public class CompraBola : MonoBehaviour
 
     public void CompraBolaBtn()
     {
-       
-         for(int i = 0; i < LojadeBolas.instance.bolasList.Count; i++)
+  
+
+        for (int i = 0; i < LojadeBolas.instance.bolasList.Count; i++)
         {
             if (LojadeBolas.instance.bolasList[i].bolasID == bolasIDe && !LojadeBolas.instance.bolasList[i].comprou)
             {

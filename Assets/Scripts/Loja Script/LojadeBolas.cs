@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class LojadeBolas : MonoBehaviour
 {
     public static LojadeBolas instance;
