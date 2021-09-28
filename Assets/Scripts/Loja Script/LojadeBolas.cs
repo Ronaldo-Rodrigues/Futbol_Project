@@ -55,17 +55,25 @@ public class LojadeBolas : MonoBehaviour
             //LISTA BOLAS VITRINE
             bolaVitrineList.Add(itensBola);
 
-            //FUNÇÃO PARA PEGAR INFORMAÇÕES DE COPRA DE BOLA
+            //FUNÇÕES PARA PEGAR INFORMAÇÕES DE COPRA DE BOLA
             if (PlayerPrefs.GetInt("BTN" + item.bolaID) == 1)
             {
                 b.comprou = true;
             }
+            if (PlayerPrefs.HasKey("BTNS" + item.bolaID) && b.comprou)
+            {
+                item.btnCompra.GetComponent<CompraBola>().btnText.text = PlayerPrefs.GetString("BTNS" + item.bolaID);
+            }
+
 
             //CARREGA OS SPRITES DAS BOLAS
             if(b.comprou == true)
             {
                 item.bolaSprite.sprite = Resources.Load<Sprite>("Sprites/" + b.nomeSprite);
-               
+                if (PlayerPrefs.HasKey("BTNS" + item.bolaID) == false)
+                {
+                    item.btnCompra.GetComponent<CompraBola>().btnText.text = "Usando";
+                }
             }
             else
             {
@@ -114,6 +122,19 @@ public class LojadeBolas : MonoBehaviour
             if(BolasVit.bolaID == idBola)
             {
                 PlayerPrefs.SetInt("BTN" + BolasVit.bolaID, BolasVit.btnCompra ? 1 :0);
+            }
+        }
+    }
+
+    public void SalvaBolasLojaText( int idBola, string s)
+    {
+        for(int i = 0; i < bolasList.Count; i++)
+        {
+            BolasVitrine bolasVit = bolaVitrineList[i].GetComponent<BolasVitrine>();
+
+            if(bolasVit.bolaID == idBola)
+            {
+                PlayerPrefs.SetString("BTNS" + bolasVit.bolaID, s);
             }
         }
     }
