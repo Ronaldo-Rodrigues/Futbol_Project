@@ -10,6 +10,7 @@ public class UIManagerLevels : MonoBehaviour
 
     void Start()
     {
+       
         moedasLevel.text = PlayerPrefs.GetInt("MoedasSave").ToString();
     }
 

@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     
     [SerializeField]
-    private GameObject bola;
+    private GameObject[] bola;
     public Transform pos;
     
     public int bolasNum, bolasEmCena = 0, tiro = 0;
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
         if(bolasNum > 0 && bolasEmCena <= 0)
         {
-            Instantiate(bola, new Vector2(pos.position.x, pos.position.y), Quaternion.identity);
+            Instantiate(bola[OndeEstou.instance.bolaEmUso], new Vector2(pos.position.x, pos.position.y), Quaternion.identity);
             bolasEmCena += 1;
             bolasNum -= 1;
             tiro = 0;

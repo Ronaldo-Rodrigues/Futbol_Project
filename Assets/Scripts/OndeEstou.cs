@@ -11,6 +11,8 @@ public class OndeEstou : MonoBehaviour
 
     public static OndeEstou instance;
 
+    public int bolaEmUso;
+
     private void Awake()
     {
         if(instance == null)
@@ -23,6 +25,8 @@ public class OndeEstou : MonoBehaviour
             Destroy(this.gameObject);
         }
         SceneManager.sceneLoaded += VerificaFase;
+
+        bolaEmUso = PlayerPrefs.GetInt("BolaUse");
     }
 
     void VerificaFase(Scene cena, LoadSceneMode modo)
