@@ -2538,9 +2538,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.05
     y: 0
-    width: 1
+    width: 0.9
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -3161,7 +3161,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1124650609}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0

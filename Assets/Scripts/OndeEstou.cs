@@ -13,6 +13,12 @@ public class OndeEstou : MonoBehaviour
 
     public int bolaEmUso;
 
+    private float _orthoSize = 5;
+
+    [SerializeField]
+    private float aspect = 1.66f;
+
+
     private void Awake()
     {
         if(instance == null)
@@ -37,6 +43,7 @@ public class OndeEstou : MonoBehaviour
         {
             Instantiate(uiManagerGO);
             Instantiate(gameManagerGO);
+            Camera.main.projectionMatrix = Matrix4x4.Ortho(-_orthoSize * aspect, _orthoSize * aspect, -_orthoSize, _orthoSize, Camera.main.nearClipPlane, Camera.main.farClipPlane);
         }
     }
 }
