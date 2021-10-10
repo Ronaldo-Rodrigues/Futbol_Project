@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class OndeEstou : MonoBehaviour
 {
     public int fase = -1;

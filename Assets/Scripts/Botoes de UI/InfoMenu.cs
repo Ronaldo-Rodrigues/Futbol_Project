@@ -48,4 +48,9 @@ public class InfoMenu : MonoBehaviour
     {
         Application.OpenURL("www.facebook.com");
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

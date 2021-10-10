@@ -21,6 +21,8 @@ public class BolaControl : MonoBehaviour
     [SerializeField]
     private GameObject morteBolaFX;
 
+    private Collider2D toqueCol;
+
     private void Awake()
     {
         setaGo = GameObject.Find("Seta1"); //seta borda que sera preenchida
@@ -102,11 +104,13 @@ public class BolaControl : MonoBehaviour
     }
     private void OnMouseDown()
     {
-       if(GameManager.instance.tiro == 0)
+        if (GameManager.instance.tiro == 0)
         {
             setaGo.GetComponent<Image>().enabled = true;
             seta2.GetComponent<Image>().enabled = true;
             liberaRot = true;
+
+            toqueCol = GameObject.FindGameObjectWithTag("Toque").GetComponentInChildren<Collider2D>();
         }
 
     }
@@ -123,6 +127,7 @@ public class BolaControl : MonoBehaviour
             AudioManager.instance.SonsFXToca(0);
             GameManager.instance.tiro = 1;
             seta2.GetComponent<Image>().fillAmount = 0;
+            toqueCol.enabled = false;
             StartCoroutine(MorreAposTempo());
             
         }
@@ -213,9 +218,5 @@ public class BolaControl : MonoBehaviour
         else { yield return 1; }
 
     }
-    void ChecaSeGanhou()
-    {
-
-      
-    }
+  
 }

@@ -10,6 +10,7 @@ TagManager:
   - InicialPos
   - BarraAnimTag
   - InfoMenu
+  - Toque
   layers:
   - Default
   - TransparentFX
